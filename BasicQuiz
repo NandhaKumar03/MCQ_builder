@@ -1,0 +1,23 @@
+class Test():
+    def __init__(self,qn,ans):
+        self.qn = qn
+        self.ans = ans
+        
+        
+qn_prompt = ["(1) Sachin Scored ___ centuries\n(a)110\n(b)95\n(c)100\n\n",
+             "(2) Sachin played for ___\n(a)Aussie\n(b)India\n(c)England\n\n",
+             "(3) Dhoni won ____ titles\n(a)2\n(b)3\n(c)4\n\n"]
+             
+objList = [Test(qn_prompt[0],'c'),
+           Test(qn_prompt[1],'b'),
+           Test(qn_prompt[2],'b')]
+           
+def run_test(objList):
+    score=0
+    for obj in objList:
+        user=input(obj.qn)
+        if user==obj.ans:
+            score+=1
+    print("You got ",score,"/",len(objList))        
+        
+run_test(objList)        
